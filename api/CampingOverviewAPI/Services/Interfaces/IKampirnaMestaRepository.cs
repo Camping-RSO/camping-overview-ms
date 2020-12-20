@@ -1,8 +1,8 @@
-﻿using AvtokampiWebAPI.Models;
+﻿using CampingOverviewAPI.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace AvtokampiWebAPI.Services.Interfaces
+namespace CampingOverviewAPI.Services.Interfaces
 {
     public interface IKampirnaMestaRepository
     {

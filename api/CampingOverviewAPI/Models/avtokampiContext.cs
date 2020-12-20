@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace AvtokampiWebAPI.Models
+namespace CampingOverviewAPI.Models
 {
     public partial class avtokampiContext : DbContext
     {

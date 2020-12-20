@@ -1,12 +1,12 @@
-﻿using AvtokampiWebAPI.Models;
-using AvtokampiWebAPI.Services.Interfaces;
+﻿using CampingOverviewAPI.Models;
+using CampingOverviewAPI.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AvtokampiWebAPI.Services
+namespace CampingOverviewAPI.Services
 {
     public class KampirnaMestaRepository : IKampirnaMestaRepository
     {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AvtokampiWebAPI.Models
+namespace CampingOverviewAPI.Models
 {
     [JsonObject("tokenManagement")]
     public class TokenManagement

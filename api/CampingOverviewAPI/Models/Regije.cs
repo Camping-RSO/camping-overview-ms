@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AvtokampiWebAPI.Models
+namespace CampingOverviewAPI.Models
 {
     public partial class Regije
     {

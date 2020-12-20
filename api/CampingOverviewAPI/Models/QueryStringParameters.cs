@@ -1,4 +1,4 @@
-﻿namespace AvtokampiWebAPI.Models
+﻿namespace CampingOverviewAPI.Models
 {
     public abstract class QueryStringParameters
     {

@@ -1,6 +1,6 @@
-using AvtokampiWebAPI.Models;
-using AvtokampiWebAPI.Services;
-using AvtokampiWebAPI.Services.Interfaces;
+using CampingOverviewAPI.Models;
+using CampingOverviewAPI.Services;
+using CampingOverviewAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -18,7 +18,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 
-namespace AvtokampiWebAPI
+namespace CampingOverviewAPI
 {
     public class Startup
     {

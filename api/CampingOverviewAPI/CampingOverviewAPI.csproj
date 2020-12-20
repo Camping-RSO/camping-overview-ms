@@ -27,6 +27,6 @@
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);1591</NoWarn>
-    <StartupObject>AvtokampiWebAPI.Program</StartupObject>
+    <StartupObject>CampingOverviewAPI.Program</StartupObject>
   </PropertyGroup>
 </Project>

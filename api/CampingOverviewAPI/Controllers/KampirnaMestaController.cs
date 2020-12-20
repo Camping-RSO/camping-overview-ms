@@ -1,12 +1,12 @@
-﻿using AvtokampiWebAPI.Models;
-using AvtokampiWebAPI.Services.Interfaces;
+﻿using CampingOverviewAPI.Models;
+using CampingOverviewAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 
-namespace AvtokampiWebAPI.Controllers
+namespace CampingOverviewAPI.Controllers
 {
     [Produces("application/json")]
     [Route("api/[controller]")]
