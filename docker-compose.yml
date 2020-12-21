@@ -1,0 +1,35 @@
+version: '3.4'
+
+networks:
+  camping-overview-ms-network:
+    driver: bridge
+
+services:
+  camping-overview-ms-postgres:
+    image: postgres:9.6
+    ports:
+      - "5432"
+    restart: always
+    volumes:
+      - ./database/camping-overview-ms.sql:/docker-entrypoint-initdb.d/camping-overview-ms.sql
+      - ./database/data.sql:/docker-entrypoint-initdb.d/data.sql
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "kampi"
+    networks:
+      - camping-overview-ms-network
+
+  camping-overview-ms-api:
+    image: api
+    depends_on:
+      - "camping-overview-ms-postgres"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8081:80"
+    environment:
+      DB_CONNECTION_STRING: "Host=camping-overview-ms-postgres;Port=5432;Database=kampi;Username=postgres;Password=postgres;Pooling=true;"
+    networks:
+      - camping-overview-ms-network

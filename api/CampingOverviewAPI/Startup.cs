@@ -1,7 +1,6 @@
 using CampingOverviewAPI.Models;
 using CampingOverviewAPI.Services;
 using CampingOverviewAPI.Services.Interfaces;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -9,7 +8,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using System;
@@ -35,11 +33,18 @@ namespace CampingOverviewAPI
             services.AddCors();
             services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
 
+            // get connection string from env var
+            var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
 
             // DB models service
             services.AddEntityFrameworkNpgsql().AddDbContext<avtokampiContext>(options =>
-                options.UseNpgsql(Configuration.GetConnectionString("Avtokampi"))
+                options.UseNpgsql(connectionString)
             );
+
+            // DB models service
+            //services.AddEntityFrameworkNpgsql().AddDbContext<avtokampiContext>(options =>
+            //    options.UseNpgsql(Configuration.GetConnectionString("Avtokampi"))
+            //);
 
             // Repository services
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
