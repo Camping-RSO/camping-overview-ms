@@ -60,7 +60,7 @@ namespace CampingOverviewAPI
                 {
                     Title = "Camping overview microservice API",
                     Version = "v1",
-                    Description = "Web API za mikrostoritev pregleda kampov (camping-overview-ms)."
+                    Description = "Web API for viewing data about camps."
                 });
 
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
