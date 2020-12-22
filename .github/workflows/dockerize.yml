@@ -38,4 +38,6 @@ jobs:
         with:
           file: ./Dockerfile
           push: true
-          tags: campingrso/camping-overview-ms:${{ steps.time.outputs.time }}
+          tags: |
+            campingrso/camping-overview-ms:${{ steps.time.outputs.time }}
+            campingrso/camping-overview-ms:latest

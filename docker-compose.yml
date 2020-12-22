@@ -21,7 +21,7 @@ services:
       - camping-overview-ms-network
 
   camping-overview-ms-api:
-    image: api
+    image: campingrso/camping-overview-ms:latest
     depends_on:
       - "camping-overview-ms-postgres"
     build:
