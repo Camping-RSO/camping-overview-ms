@@ -14,6 +14,10 @@ CREATE TABLE avtokampi (
   naziv VARCHAR(100) NOT NULL,
   opis VARCHAR(1000) NOT NULL,
   telefon VARCHAR(45) NOT NULL,
+  naslov VARCHAR(100),
+  naziv_lokacije VARCHAR(45),
+  koordinata_x VARCHAR(45),
+  koordinata_y VARCHAR(45),
   regija INT NOT NULL
 );
 

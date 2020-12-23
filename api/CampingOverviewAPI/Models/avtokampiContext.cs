@@ -52,6 +52,22 @@ namespace CampingOverviewAPI.Models
                     .HasColumnName("telefon")
                     .HasMaxLength(45);
 
+                entity.Property(e => e.KoordinataX)
+                    .HasColumnName("koordinata_x")
+                    .HasMaxLength(45);
+
+                entity.Property(e => e.KoordinataY)
+                    .HasColumnName("koordinata_y")
+                    .HasMaxLength(45);
+
+                entity.Property(e => e.Naslov)
+                    .HasColumnName("naslov")
+                    .HasMaxLength(100);
+
+                entity.Property(e => e.NazivLokacije)
+                    .HasColumnName("naziv_lokacije")
+                    .HasMaxLength(45);
+
                 entity.HasOne(d => d.RegijaNavigation)
                     .WithMany(p => p.Avtokampi)
                     .HasForeignKey(d => d.Regija)

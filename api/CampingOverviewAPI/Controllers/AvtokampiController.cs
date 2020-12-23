@@ -204,7 +204,11 @@ namespace CampingOverviewAPI.Controllers
         ///         "avtokampId": 1,
         ///         "naziv": "Kamp NJIVICE2",
         ///         "opis": "Opis kampa2",
+        ///         "naslov": "Večna pot 112",
         ///         "telefon": "083211232",
+        ///         "nazivLokacije": "Njivice",
+        ///         "koordinataX": "45.33399",
+        ///         "koordinataY": "22.19993",
         ///         "regija": 1
         ///     }
         ///
