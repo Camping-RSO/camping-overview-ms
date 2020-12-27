@@ -31,7 +31,7 @@ namespace CampingOverviewAPI.Controllers
         /// <remarks>
         /// Primer zahtevka:
         ///
-        ///     GET api/Avtokampi/Paging
+        ///     GET api/avtokampi/paging
         ///
         /// </remarks>
         /// <returns>Seznam aktivnih avtokampov</returns>
@@ -81,7 +81,7 @@ namespace CampingOverviewAPI.Controllers
         /// <remarks>
         /// Primer zahtevka:
         ///
-        ///     GET api/Avtokampi
+        ///     GET api/avtokampi
         ///
         /// </remarks>
         /// <returns>Seznam vseh aktivnih avtokampov</returns>
@@ -116,7 +116,7 @@ namespace CampingOverviewAPI.Controllers
         /// <remarks>
         /// Primer zahtevka:
         ///
-        ///     GET api/Avtokampi/1234
+        ///     GET api/avtokampi/1234
         ///
         /// </remarks>
         /// <returns>Objekt Avtokamp</returns>
@@ -156,9 +156,16 @@ namespace CampingOverviewAPI.Controllers
         /// <remarks>
         /// Primer zahtevka:
         ///
-        ///     POST api/Avtokampi
+        ///     POST api/avtokampi
         ///     {
-        ///         "Naziv": "Ime avtokampa"
+        ///         "naziv": "Kamp Adria",
+        ///         "opis": "Kamp Adria je relativno nov kamp, ki se nahaja v središču Ankarana.",
+        ///         "telefon": "032234434",
+        ///         "naslov": "Jadranska cesta 25, 6280 Ankaran",
+        ///         "naziv_lokacije": "Ankaran",
+        ///         "koordinata_x": "14.200453",
+        ///         "koordinata_y": "77.200864",
+        ///         "regija": 4
         ///     }
         ///
         /// </remarks>
@@ -199,16 +206,16 @@ namespace CampingOverviewAPI.Controllers
         /// <remarks>
         /// Primer zahtevka:
         ///
-        ///     PUT api/Avtokampi/1234
+        ///     PUT api/avtokampi/1234
         ///     {
-        ///         "avtokampId": 1,
-        ///         "naziv": "Kamp NJIVICE2",
-        ///         "opis": "Opis kampa2",
-        ///         "naslov": "Večna pot 112",
+        ///         "avtokamp_id": 1,
+        ///         "naziv": "Kamp Njivice 2",
+        ///         "opis": "Kamp Njivice 2 ima idilično lego ob morju.",
+        ///         "naslov": "Večna pot 112, 1000 Ljubljana",
         ///         "telefon": "083211232",
-        ///         "nazivLokacije": "Njivice",
-        ///         "koordinataX": "45.33399",
-        ///         "koordinataY": "22.19993",
+        ///         "naziv_lokacije": "Njivice",
+        ///         "koordinata_x": "45.33399",
+        ///         "koordinata_y": "22.19993",
         ///         "regija": 1
         ///     }
         ///
@@ -251,7 +258,7 @@ namespace CampingOverviewAPI.Controllers
         /// <remarks>
         /// Primer zahtevka:
         ///
-        ///     DELETE api/Avtokampi/1234
+        ///     DELETE api/avtokampi/1234
         ///
         /// </remarks>
         /// <returns>Boolean value</returns>
@@ -291,7 +298,7 @@ namespace CampingOverviewAPI.Controllers
         /// <remarks>
         /// Primer zahtevka:
         ///
-        ///     GET api/Avtokampi/1234
+        ///     GET api/avtokampi/1234
         ///
         /// </remarks>
         /// <returns>Objekt Avtokamp</returns>
@@ -331,7 +338,7 @@ namespace CampingOverviewAPI.Controllers
         /// <remarks>
         /// Primer zahtevka:
         ///
-        ///     GET api/Avtokampi/1234
+        ///     GET api/avtokampi/1234
         ///
         /// </remarks>
         /// <returns>Objekt Avtokamp</returns>
@@ -371,9 +378,10 @@ namespace CampingOverviewAPI.Controllers
         /// <remarks>
         /// Primer zahtevka:
         ///
-        ///     POST api/Avtokampi
+        ///     POST api/avtokampi
         ///     {
-        ///         "Naziv": "Ime avtokampa"
+        ///         "naziv": "Ime avtokampa",
+        ///         "cena": 180
         ///     }
         ///
         /// </remarks>
@@ -415,9 +423,9 @@ namespace CampingOverviewAPI.Controllers
         /// <remarks>
         /// Primer zahtevka:
         ///
-        ///     PUT api/Avtokampi/1234
+        ///     PUT api/avtokampi/1234
         ///     {
-        ///         "Naziv": "Novo ime avtokampa"
+        ///         "naziv": "Novo ime avtokampa"
         ///     }
         ///
         /// </remarks>
@@ -459,7 +467,7 @@ namespace CampingOverviewAPI.Controllers
         /// <remarks>
         /// Primer zahtevka:
         ///
-        ///     DELETE api/Avtokampi/1234/cenik
+        ///     DELETE api/avtokampi/1234/cenik
         ///
         /// </remarks>
         /// <returns>Boolean value</returns>
@@ -499,7 +507,7 @@ namespace CampingOverviewAPI.Controllers
         /// <remarks>
         /// Primer zahtevka:
         ///
-        ///     GET api/Avtokampi
+        ///     GET api/avtokampi
         ///
         /// </remarks>
         /// <returns>Seznam vseh aktivnih avtokampov</returns>
@@ -534,7 +542,7 @@ namespace CampingOverviewAPI.Controllers
         /// <remarks>
         /// Primer zahtevka:
         ///
-        ///     GET api/Avtokampi
+        ///     GET api/avtokampi
         ///
         /// </remarks>
         /// <returns>Seznam vseh aktivnih avtokampov</returns>

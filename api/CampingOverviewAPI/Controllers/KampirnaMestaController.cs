@@ -28,7 +28,7 @@ namespace CampingOverviewAPI.Controllers
         /// <remarks>
         /// Primer zahtevka:
         ///
-        ///     GET api/kampirnamesta/123/avtokamp
+        ///     GET api/kampirna_mesta/123/avtokamp
         ///
         /// </remarks>
         /// <returns>Seznam vseh kampirnih mest avtokampa</returns>
@@ -64,7 +64,7 @@ namespace CampingOverviewAPI.Controllers
         /// <remarks>
         /// Primer zahtevka:
         ///
-        ///     GET api/kampirnamesta/1234/12
+        ///     GET api/kampirna_mesta/1234/12
         ///
         /// </remarks>
         /// <returns>Objekt KampirnaMesta</returns>
@@ -104,9 +104,11 @@ namespace CampingOverviewAPI.Controllers
         /// <remarks>
         /// Primer zahtevka:
         ///
-        ///     POST api/kampirnamesta/123
+        ///     POST api/kampirna_mesta/123
         ///     {
-        ///         "Naziv": "Ime kampirnamesta"
+        ///         "naziv": "Ime kampirnega mesta",
+        ///         "velikost": "Velikost avtokampa",
+        ///         "kategorija": 3
         ///     }
         ///
         /// </remarks>
@@ -148,9 +150,10 @@ namespace CampingOverviewAPI.Controllers
         /// <remarks>
         /// Primer zahtevka:
         ///
-        ///     PUT api/kampirnamesta/1234/123
+        ///     PUT api/kampirna_mesta/1234/123
         ///     {
-        ///         "Naziv": "Nov ime kampirnamesta"
+        ///         "naziv": "Novo ime kampirnega mesta",
+        ///         "velikost": "Nova velikost avtokampa"
         ///     }
         ///
         /// </remarks>
@@ -193,7 +196,7 @@ namespace CampingOverviewAPI.Controllers
         /// <remarks>
         /// Primer zahtevka:
         ///
-        ///     DELETE api/kampirnamesta/1234/123
+        ///     DELETE api/kampirna_mesta/1234/123
         ///
         /// </remarks>
         /// <returns>Boolean value</returns>
@@ -234,7 +237,7 @@ namespace CampingOverviewAPI.Controllers
         /// <remarks>
         /// Primer zahtevka:
         ///
-        ///     GET api/kampirnamesta/kategorije
+        ///     GET api/kampirna_mesta/kategorije
         ///
         /// </remarks>
         /// <returns>Seznam vseh kategorij kampirnih mest</returns>
