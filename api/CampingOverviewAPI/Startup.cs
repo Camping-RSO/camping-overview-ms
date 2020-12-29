@@ -82,7 +82,7 @@ namespace CampingOverviewAPI
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "kampi");
+                c.SwaggerEndpoint("/camping-overview/swagger/v1/swagger.json", "kampi");
                 c.RoutePrefix = string.Empty;
             });
 
