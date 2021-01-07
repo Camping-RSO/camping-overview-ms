@@ -1,5 +1,8 @@
 ﻿using CampingOverviewAPI.Models;
 using CampingOverviewAPI.Services.Interfaces;
+using GraphQL;
+using GraphQL.Client.Http;
+using GraphQL.Client.Serializer.Newtonsoft;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -17,6 +20,7 @@ namespace CampingOverviewAPI.Controllers
     {
         private readonly IAvtokampiRepository _avtokampiService;
         private readonly ILogger _logger;
+        // To use NewtonsoftJsonSerializer, add a reference to NuGet package GraphQL.Client.Serializer.Newtonsoft
 
         public AvtokampiController(IAvtokampiRepository avtokampiService, ILogger<AvtokampiController> logger)
         {
@@ -96,7 +100,36 @@ namespace CampingOverviewAPI.Controllers
         {
             try
             {
+                var graphQLClient = new GraphQLHttpClient(Environment.GetEnvironmentVariable("GRAPHQL_ENDPOINT"), new NewtonsoftJsonSerializer());
+
+                var logRequest = new GraphQLRequest
+                {
+                    Query = @"
+                        mutation addLog {
+                          createLog(microservice: 'camping-overview-ms', message: 'Retrieving all camps...') {
+                            log { microservice 
+                                  message 
+                            }
+                          }
+                        }"
+                };
+                await graphQLClient.SendMutationAsync<MutationResult>(logRequest);
+
                 var result = await _avtokampiService.GetAll();
+
+                logRequest = new GraphQLRequest
+                {
+                    Query = @"
+                        mutation addLog {
+                          createLog(microservice: 'camping-overview-ms', message: 'All camps were retrieved...') {
+                            log { microservice 
+                                  message 
+                            }
+                          }
+                        }"
+                };
+                await graphQLClient.SendMutationAsync<MutationResult>(logRequest);
+
                 if (result == null)
                 {
                     return NotFound(/*new ErrorHandlerModel($"Avtokamp z ID { id }, ne obstaja.", HttpStatusCode.NotFound)*/);
@@ -570,5 +603,17 @@ namespace CampingOverviewAPI.Controllers
                 return BadRequest(/*new ErrorHandlerModel(e.Message, HttpStatusCode.BadRequest)*/);
             }
         }
+    }
+}
+
+public class MutationResult
+{
+    public Log log { get; set; }
+
+    public class Log
+    {
+        public string microservice { get; set; }
+
+        public string message { get; set; }
     }
 }
